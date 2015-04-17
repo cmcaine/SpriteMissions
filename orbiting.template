@@ -1,0 +1,15 @@
+	PARAMETER
+	{
+		name = ReachState
+		type = ReachState
+
+		situation = ORBITING
+	
+		// Indicates that this parameter needs to be complete "in sequence".
+		// All parameters that are before this parameter in the list (and at
+		// the same level) must be completed before this parameter is allowed
+		// to complete.
+		// Default = false
+		completeInSequence = true
+	}
+	

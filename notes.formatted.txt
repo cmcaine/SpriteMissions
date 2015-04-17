@@ -1,0 +1,31 @@
+CONTROLS:
+
+0 - Activate Airsync (Important, use on start-up)
+1 - Toggle Turbojet
+2 - Toggle Rockets
+3 - Toggle Nav Lights
+5 - Toggle High Altitude Intakes (Reduces Drag On Ascent)
+9 - Toggle Ladder
+
+ABORT - Undock/Decouple Top Docking Port
+
+
+AIR WHAT?
+
+Air Sync works by closing all the intakes before takeoff, the same intakes are also set to toggle along with the jet engine. In short this means jet engine on - intakes open, jet engine off - intakes closed, all without having to lift a finger.
+
+
+STANDARD MISSION PROFILE:
+
+Activate SAS, set control to the top docking port (vertical) press 0 to activate airsync, 1 to fire up the engines and 5 to close the high altitude intakes.
+Head straight up to 15,000m then pitch over to 45` on a 90` heading.
+At around 25,000m press 5 to re-open the high altitude intakes.
+At 30,000m pitch down towards the horizon, you want your apoapsis to read 40,000m (the orbital info tab from Mechjeb is highly recommended).
+Adjust your pitch to hold altitude at 40,000m and keep building up speed.
+As you get towards 2300m/s you'll be pitching almost flat towards the horizon. Once you pass orbital velocity (2300m/s) your apoapsis will start rising rapidly. At this point you can set the SAS to point prograde and just concentrate on working the throttle.
+Keep the jet going as long as you can by slowly reducing throttle, you'll still generate small amounts of thrust until you're almost out the atmosphere.
+If everything's gone to plan you'll have an apoapsis of around 210,000m and a small amount of liquid fuel reserve you can use for landing later on.
+Once out the atmosphere press 1 to shutdown the jet and 2 to activate the rocket motors. You can now circularize or in some cases go straight for a munar injection/interplanetary burn.
+Using the top docking port will cause the Sprite to behave like a regular rocket. It's essential that you use this orientation for burns with the navball or Mechjeb control. On landing you should use horizontal (VTOL) orientation which you can switch to do by pressing C twice.
+On returning to Kerbin aim for a high altitude reentry height (30-40,000m). At this height only small amounts of thrust from the turbo jet will let you make suborbital hops and get you back to the KSC using only tiny amounts of fuel.
+On landing use the jet and rocket engines together to help get rid of any throttle lag.

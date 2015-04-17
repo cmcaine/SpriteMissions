@@ -1,0 +1,18 @@
+{
+	"NAME":"Contract Pack: Sprite Missions",
+	"URL":"http://ksp-avc.cybutek.net/version.php?id=???",
+	"DOWNLOAD":"https://kerbalstuff.com/mod/651/Contrace%20Pack:%20Sprite%20Missions",
+	"VERSION":
+	{
+		"MAJOR":0,
+		"MINOR":1,
+		"PATCH":0,
+		"BUILD":0
+	},
+	"KSP_VERSION":
+	{
+		"MAJOR":0,
+		"MINOR":90,
+		"PATCH":0
+	}
+}

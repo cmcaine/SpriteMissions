@@ -1,0 +1,16 @@
+	
+			PARAMETER
+			{
+				name = ReachState
+				type = ReachState
+	
+				targetBody = <TARGETBODY>
+				situation = LANDED
+			}
+			PARAMETER
+			{
+				name = PlantFlag
+				type = PlantFlag
+				targetBody = <TARGETBODY>
+				completeInSequence = true
+			}

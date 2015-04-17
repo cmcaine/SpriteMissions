@@ -1,0 +1,192 @@
+/////////////////////////////
+///////////////////////////
+CONTRACT_TYPE
+{
+	name = <CONTRACT_NAME>
+	title = <CONTRACT_TITLE>
+	description = <DESCRIPTION>
+	notes = CONTROLS:\n \n 0 - Activate Airsync (Important, use on start-up)\n 1 - Toggle Turbojet\n 2 - Toggle Rockets\n 3 - Toggle Nav Lights\n 5 - Toggle High Altitude Intakes (Reduces Drag On Ascent)\n 9 - Toggle Ladder\n \n ABORT - Undock/Decouple Top Docking Port\n \n \n AIR WHAT?\n \n Air Sync works by closing all the intakes before takeoff, the same intakes are also set to toggle along with the jet engine. In short this means jet engine on - intakes open, jet engine off - intakes closed, all without having to lift a finger.\n \n \n STANDARD MISSION PROFILE:\n \n Activate SAS, set control to the top docking port (vertical) press 0 to activate airsync, 1 to fire up the engines and 5 to close the high altitude intakes.\n Head straight up to 15,000m then pitch over to 45` on a 90` heading.\n At around 25,000m press 5 to re-open the high altitude intakes.\n At 30,000m pitch down towards the horizon, you want your apoapsis to read 40,000m (the orbital info tab from Mechjeb is highly recommended).\n Adjust your pitch to hold altitude at 40,000m and keep building up speed.\n As you get towards 2300m/s you'll be pitching almost flat towards the horizon. Once you pass orbital velocity (2300m/s) your apoapsis will start rising rapidly. At this point you can set the SAS to point prograde and just concentrate on working the throttle.\n Keep the jet going as long as you can by slowly reducing throttle, you'll still generate small amounts of thrust until you're almost out the atmosphere.\n If everything's gone to plan you'll have an apoapsis of around 210,000m and a small amount of liquid fuel reserve you can use for landing later on.\n Once out the atmosphere press 1 to shutdown the jet and 2 to activate the rocket motors. You can now circularize or in some cases go straight for a munar injection/interplanetary burn.\n Using the top docking port will cause the Sprite to behave like a regular rocket. It's essential that you use this orientation for burns with the navball or Mechjeb control. On landing you should use horizontal (VTOL) orientation which you can switch to do by pressing C twice.\n On returning to Kerbin aim for a high altitude reentry height (30-40,000m). At this height only small amounts of thrust from the turbo jet will let you make suborbital hops and get you back to the KSC using only tiny amounts of fuel.\n On landing use the jet and rocket engines together to help get rid of any throttle lag.\n
+	synopsis = <SYNOPSIS>
+	completedMessage = Future generations will remember this day.
+	//agent = Kerbin World-Firsts Record-Keeping Society
+	cancellable = true
+	declinable = true
+	prestige = <PRESTIGE>
+	maxCompletions = 1
+	maxSimultaneous = 1
+	rewardScience = <SCIENCE>
+	rewardReputation = <REPUTATION>
+	rewardFunds = <REWARD_FUNDS>
+	advanceFunds = 0
+	// weight = 99.0
+
+	REQUIREMENT
+	{
+		name = TechResearched
+		type = TechResearched
+	
+		// The technology that needs to have been researched.  Take special
+		// note that this does not get validated - if you make a typo, the
+		// requirement will always return false.  May be specified multiple
+		// times.
+	
+		tech = advExploration
+		tech = advFlightControl
+		tech = advMetalworks
+		tech = composites
+		tech = electrics
+		tech = flightControl
+		tech = fuelSystems
+		tech = generalConstruction
+		tech = highAltitudeFlight
+		tech = hypersonicFlight
+		tech = landing
+		tech = scienceTech
+		tech = supersonicFlight
+	
+		// A part that needs to have its technology unlocked.  Note that if the
+		// player is playing with part unlocking, that that is only checking for
+		// the tech being unlocked  (the player may have the technology, but not
+		// the part).  May be specified multiple times.
+
+		//part = dockingPort3
+		//part = strutOcto
+		//part = strutCube
+		//part = telescopicLadderBay
+		//part = batteryBankMini
+		//part = liquidEngineMini
+		//part = turboFanEngine
+		//part = mk2SpacePlaneAdapter
+		//part = SmallGearBay
+		//part = strutConnector
+		//part = shockConeIntake
+		//part = fuelLine
+		//part = CircularIntake
+		//part = solarPanels5
+		//part = mk1pod
+		//part = spotLight1
+		//part = batteryPack
+		//part = sasModule
+		//part = radialRCSTank
+		//part = RCSBlock
+		//part = spotLight2
+	
+	}
+
+	PARAMETER
+	{
+		name = VesselParameterGroup
+		type = VesselParameterGroup
+	
+		vessel = <VESSEL>
+	
+		PARAMETER
+		{
+			name = HasCrew9001
+			type = HasCrew
+			trait = Pilot
+			minCrew = 1
+		}
+
+		PARAMETER
+		{
+			name = VesselParameterGroup
+			type = VesselParameterGroup
+	
+<TARGETS>
+		}
+	}
+
+<CONCLUSION>
+	
+	PARAMETER
+	{
+		name = VesselNotDestroyed
+		type = VesselNotDestroyed
+	
+	}
+	
+	BEHAVIOUR
+	{
+		name = SpawnVessel
+		type = SpawnVessel
+	
+		VESSEL
+		{
+			// If the name is not supplied, defaults from the name within the
+			// craft file.  Note that this name behaves like the
+			// VesselParameterGroup define field - in other words, you may
+			// refer back to this vessel by this name in VesselParameterGroup
+			// parameters.
+			name = <VESSEL>
+	
+			// Path to the .craft file (relative to the GameData/ directory)
+			craftURL = ContractPacks/Spacetux/SpriteMissions/<CRAFT_URL>
+	
+			// Location of the flag to use.
+			// Default = Player's flag for the current game
+			flagURL = ContractPacks/Spacetux/SpriteMissions/sprite_flag.png
+	
+			// The type of vessel (affects display in the tracking station).
+			// Valid values from VesselType enum:
+			// Base
+			// Lander
+			// Probe
+			// Rover
+			// Ship (default)
+			// Station
+			// Unknown
+			vesselType = Ship
+	
+			// Whether the vessel should show up as owned or unowned.  If it is
+			// owned, then it will be immediately selectable.
+			owned = True
+	
+			// Where the vessel should spawn - defaulted from the contract if
+			// not supplied.
+			targetBody = Kerbin
+	
+			// If you wish to specify a landed vessel, you must also 
+			// supply the following values from the persistant.sfs
+			// file.
+
+			// Launchpad coordinates
+			// lat	0.0972 S
+			// long	74.5577 W
+			// elevation	72.503
+	
+			// Runway coordinates
+			// lat	0.0486 S
+			// long	74.7245 W
+			// elevation:  69.156
+	
+			lat = -0.0486
+			lon = -74.7245
+			alt = 69.156
+	
+			// Not used, but needed
+			ORBIT
+			{
+			}	
+			// A CREW node indicates one or more crew members to add to the
+			// vessel.  The CREW node may be specified multiple times.
+			CREW
+			{
+				// Name for the crew member - if not provided, one is
+				// auto-generated.
+				// name = Patrick R. Kerman
+	
+				// Whether or not the Kerbal should be added to the roster on 
+				// recovery.
+				// Default = True
+				addToRoster = True
+	
+				// Number of crew to generate from this node.  Shouldn't be
+				// supplied if name is supplied.
+				// Default = 1
+				count = 1
+			}
+	
+		}
+	 }
+}
