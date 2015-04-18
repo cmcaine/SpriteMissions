@@ -106,12 +106,12 @@ for i in `seq 0 $((numMissions-1))`; do
 
 	for (( s=0; s<${#ships}; s++ )); do
 		crafturl=${vesselURL[$s]}
-		vessel=`grep 'ship = ' "${crafturl}"  | cut -f3- -d' ' | tr -d '\r' | tr -d '\n'`
+		vessel=`grep 'ship = ' "${crafturl}"  | cut -f3- -d' ' | tr -d '\r' | tr -d '\n' | tr -d '(' | tr -d ')' | sed "s/ /_/g"`
 
 echo $crafturl
 echo $vessel
 
-		ContractName="${contractname}${vessel}"
+		ContractName=`echo ${contractname}${vessel} | tr -d '(' | tr -d ')' | sed "s/ /_/g"`
 		for targetbody in `seq 2 $((cnt-1))`; do
 			if [ "${ar[targetbody]}" != "orbit" ]; then
 				target="${contractname}${ar[targetbody]}"
